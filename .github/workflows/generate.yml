@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
 
-permissions: read-all|write-all # too lazy
+permissions: write-all
 
 jobs:
   build:
