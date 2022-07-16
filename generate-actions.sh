@@ -28,3 +28,6 @@ jobs:
       with:
         path: build
 EOF
+
+git diff
+
