@@ -14,4 +14,4 @@ cd "$build" || exitmsg "Failed to change cd to $build."
 
 "../plugins/$1/build"
 
-cp -R "build/libs" ../build
+mv "build/libs/*.jar" "../build/$1.jar"
