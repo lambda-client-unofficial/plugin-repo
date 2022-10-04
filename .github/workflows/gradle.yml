@@ -9,7 +9,7 @@ jobs:
   plugins_matrix:
     strategy:
       matrix:
-        plugins: [autosign, discord-integration, elytra-bot, irc-chat]
+        plugins: [autosign, chunk-calc, discord-integration, elytra-bot, irc-chat]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
