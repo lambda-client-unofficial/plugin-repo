@@ -14,7 +14,7 @@ build="$1-build"
 echo "🔄 $build"
 git clone -q "$source" "$build" || exitmsg "Failed to clone repository from $source to $build"
 cd "$build" || exitmsg "Failed to change cd to $build."
-git -q checkout "${version[0]}" || exitmsg "Failed to change version to ${version[0]}"
+git checkout -q "${version[0]}" || exitmsg "Failed to change version to ${version[0]}"
 
 echo "🔨 $1"
 "../plugins/$1/build"
