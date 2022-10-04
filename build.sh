@@ -11,7 +11,7 @@ exitmsg() {
 source=$(cat "plugins/$1/source")
 IFS=" " read -r -a version <<< "$(cat "plugins/$1/version")"
 build="$1-build"
-echo "↓ $build"
+echo "🔄 $build"
 git clone -q "$source" "$build" || exitmsg "Failed to clone repository from $source to $build"
 cd "$build" || exitmsg "Failed to change cd to $build."
 
