@@ -9,7 +9,8 @@ jobs:
   plugins_matrix:
     strategy:
       matrix:
-        plugins: [autosign, chunk-calc, discord-integration, elytra-bot, irc-chat, stash-finder]
+        plugins: [autosign, chunk-calc, discord-integration, elytra-bot, irc-chat, remote-control,
+stash-finder]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
