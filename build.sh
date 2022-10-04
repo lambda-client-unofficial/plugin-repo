@@ -17,6 +17,7 @@ cd "$build" || exitmsg "Failed to change cd to $build."
 git checkout -q "${version[0]}" || exitmsg "Failed to change version to ${version[0]}"
 
 echo "🔨 $1"
+chmod +x "../plugins/$1/build"
 "../plugins/$1/build"
 
 find build/libs/*.jar | while IFS= read -r s; do mv "$s" "build/libs/$1-${version[0]}.jar"; done
