@@ -35,6 +35,8 @@ name: Check if plugin versions are correct.
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - '.github/**'
   pull_request:
     branches: [ "main" ]
 
