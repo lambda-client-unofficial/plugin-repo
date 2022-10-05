@@ -13,7 +13,6 @@ do
     if [ "$remote_version" = "${version[1]}" ]; then
         echo "✔ $plugin"
     else
-        echo >&2 "✖ $plugin"
-        echo "::warning file=$plugin/source,line=1::Incorrect lambda api version set."
+        echo "::warning::✖ $plugin has lambda api version ${version[1]} set, expected $remote_version"
     fi
 done
