@@ -13,6 +13,6 @@ do
     if [ "$remote_version" = "${version[1]}" ]; then
         echo "✔ $plugin"
     else
-        echo "::warning::✖ $plugin has lambda api version ${version[1]} set, expected $remote_version"
+        echo "::error::$plugin has lambda api version ${version[1]} set, expected $remote_version"
     fi
 done
