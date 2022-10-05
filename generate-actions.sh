@@ -29,30 +29,5 @@ jobs:
         path: build
 EOF
 
-cat << EOF > .github/workflows/check.yml
-name: Check if plugin versions are correct. 
-
-on:
-  push:
-    branches: [ "main" ]
-    paths-ignore:
-      - '.github/**'
-  pull_request:
-    branches: [ "main" ]
-
-  workflow_dispatch:
-
-jobs:
-  plugins_matrix:
-    strategy:
-      matrix:
-        plugins: [$plugins]
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: |
-        ./check-version.sh \${{ matrix.plugins }}
-EOF
-
 git diff
 

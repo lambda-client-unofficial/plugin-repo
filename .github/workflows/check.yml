@@ -20,4 +20,4 @@ music-player, remote-control, render-tweak, stash-finder]
     steps:
     - uses: actions/checkout@v3
     - run: |
-        ./check-version.sh ${{ matrix.plugins }}
+        ./check-version.sh
