@@ -1,0 +1,21 @@
+name: Check if plugin versions are correct. 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  plugins_matrix:
+    strategy:
+      matrix:
+        plugins: [anti-narrator, autosign, chunk-calc, discord-integration, elytra-bot, 
+irc-chat, music-player, remote-control, render-tweak, stash-finder]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: |
+        ./check-version.sh ${{ matrix.plugins }}
