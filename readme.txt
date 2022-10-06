@@ -1,6 +1,8 @@
 For users:
 To download the built plugins, go to the releases page.
 https://github.com/lambda-client-unofficial/plugin-repo/releases
+Or, you can also download from the github actions for the plugins that are built on the latest commit
+https://github.com/lambda-client-unofficial/plugin-repo/actions/workflows/latest.yml
 
 
 For Developers:
