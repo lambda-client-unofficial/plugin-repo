@@ -1,4 +1,4 @@
-name: Build and upload all plugins
+name: Build latest
 
 on: workflow_dispatch
 
@@ -9,8 +9,7 @@ jobs:
   plugins_matrix:
     strategy:
       matrix:
-        plugins: [anti-narrator, autosign, chunk-calc, discord-integration, elytra-bot, irc-chat,
-music-player, remote-control, render-tweak, stash-finder]
+        plugins: [anti-narrator, autosign, chunk-calc, discord-integration, elytra-bot, irc-chat, music-player, remote-control, render-tweak, stash-finder]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -19,7 +18,7 @@ music-player, remote-control, render-tweak, stash-finder]
         java-version: '8'
         distribution: 'temurin'
     - run: |
-        ./build.sh ${{ matrix.plugins }}
+        ./build.sh ${{ matrix.plugins }} --git
     - uses: actions/upload-artifact@v3.1.0
       with:
         path: build
