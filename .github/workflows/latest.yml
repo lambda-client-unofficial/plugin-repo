@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         plugins: [anti-narrator, autosign, chunk-calc, discord-integration, elytra-bot, irc-chat,
-music-player, remote-control, render-tweak, stash-finder]
+remote-control, render-tweak, stash-finder]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
