@@ -22,6 +22,15 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
+    - name: Gradle cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: \${{ runner.os }}-gradle-\${{ matrix.plugins }}-\${{ hashFiles('**/*.gradle*') }}
+        restore-keys: |
+          \${{ runner.os }}-gradle-\${{ matrix.plugins }}-
     - run: |
         ./build.sh \${{ matrix.plugins }}
     - uses: actions/upload-artifact@v3.1.0
@@ -49,6 +58,15 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
+    - name: Gradle cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: \${{ runner.os }}-gradle-\${{ matrix.plugins }}-\${{ hashFiles('**/*.gradle*') }}
+        restore-keys: |
+          \${{ runner.os }}-gradle-\${{ matrix.plugins }}-
     - run: |
         ./build.sh \${{ matrix.plugins }} --git
     - uses: actions/upload-artifact@v3.1.0

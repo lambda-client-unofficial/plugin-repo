@@ -1,4 +1,4 @@
 #!/bin/sh
 
 chmod +x gradlew
-./gradlew -q build
+./gradlew --build-cache -q build
