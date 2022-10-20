@@ -5,7 +5,10 @@ plugins="$(ls -m plugins)"
 cat << EOF > .github/workflows/release.yml
 name: Build releases
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions:
   contents: read
@@ -41,7 +44,10 @@ EOF
 cat << EOF > .github/workflows/latest.yml
 name: Build latest
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions:
   contents: read
